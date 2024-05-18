@@ -5,10 +5,7 @@ Select
 From subscriptions;
 
 
-
-
--- 2) What is the monthly distribution of trial plan start_date values for our dataset - 
---    use the start of the month as the group by value
+-- 2) What is the monthly distribution of trial plan start_date values for our dataset use the start of the month as the group by value.
 
 Select 
   monthname(start_date) as month, 
@@ -20,8 +17,7 @@ Order by month(start_date);
 
 
 
--- 3) What plan start_date values occur after the year 2020 for our dataset? 
--- Show the breakdown by count of events for each plan_name
+-- 3) What plan start_date values occur after the year 2020 for our dataset? Show the breakdown by count of events for each plan_name.
 
 Select 
   p.plan_name, 
@@ -35,7 +31,7 @@ Order by p.plan_id;
 
 -- 4) What is the customer count and percentage of customers who have churned rounded to 1 decimal place?
 
-# 1st Method - Subquery
+-- # 1st Method - Subquery
 
   SELECT 
     customer_churned,
@@ -51,7 +47,7 @@ Order by p.plan_id;
   ) AS x;
 
 
-# 2nd Mehtod - CTE
+-- # 2nd Method - CTE
 
   With churned_customers AS (
       select 
@@ -71,14 +67,9 @@ Order by p.plan_id;
   FROM churned_customers as c
   Cross Join total_customers;
     
----------------
 
 
-
-
-
--- 5) How many customers have churned straight after their initial free trial - 
-  -- what percentage is this rounded to the nearest whole number?
+-- 5) How many customers have churned straight after their initial free trial. what percentage is this rounded to the nearest whole number?
     
   WITH churn_customer AS (
       SELECT *
@@ -93,9 +84,8 @@ Order by p.plan_id;
     Concat(Round(Count(*) / (Select Count(Distinct customer_id) From subscriptions) *100,0),'%') As churned_percentage
   From churn_customer;
 
----------
 
-# Without Join
+-- # Without Join
 
 WITH CTE AS (
     SELECT *
@@ -109,8 +99,6 @@ Round(Count(*) / (Select COUNT(Distinct customer_id) From subscriptions) *100,0)
 From CTE;
 
 
-
-    
 --  6.  What is the number and percentage of customer plans after their initial free trial?
 
    WITH CTE AS (
@@ -126,9 +114,6 @@ From CTE;
   From CTE
   Where rn = 2 
   Group by plan_name;
-
-
-
 
 
 --  7.  What is the customer count and percentage breakdown of all 5 plan_name values at 2020-12-31?
@@ -189,9 +174,10 @@ From CTE;
   Where f.start_date < p.start_date;
     
     
-------------------------
 
 -- 10.   Can you further breakdown this average value into 30 day periods (i.e. 0-30 days, 31-60 days etc)
+
+-- # 1st short method
 
   WITH Trial as (
     SELECT customer_id, start_date as trial_start
@@ -215,9 +201,7 @@ From CTE;
   GROUP BY 1;
 
 
-------
-
-# 2nd long Method
+-- # 2nd Method
 
 WITH TRIAL AS (
 SELECT 
@@ -254,10 +238,8 @@ FROM TRIAL as T
 INNER JOIN ANNUAL as A on T.customer_id = A.customer_id
 GROUP BY 1;
 
---------------------
 
 -- 11.How many customers downgraded from a pro monthly to a basic monthly plan in 2020?
-
 
   WITH pro_monthly_plan AS (
         Select * 
