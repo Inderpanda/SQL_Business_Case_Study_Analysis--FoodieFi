@@ -39,15 +39,19 @@ When customers churn - they will keep their access until the end of their curren
 
 ![Screenshot (4980)](https://github.com/Inderpanda/SQL_Business_Case_Study_Analysis--FoodieFi/assets/138003751/b7df37f8-1651-43e3-bad6-da23d774bc78)
 
+![Screenshot (5006)](https://github.com/Inderpanda/SQL_Business_Case_Study_Analysis--FoodieFi/assets/138003751/7cac50da-0a44-4770-a16d-a77e9253dc6a)
+
+
 # Business Questions 
 
 ![Box Q](https://github.com/Inderpanda/SQL_Business_Case_Study_Analysis--FoodieFi/assets/138003751/6257f7ae-4d7f-4cb2-abe5-1e595325b3ad)
 
+![Screenshot (5007)](https://github.com/Inderpanda/SQL_Business_Case_Study_Analysis--FoodieFi/assets/138003751/b44a3598-34f3-4cfa-b444-09cabda9b27c)
+
+
 # Conclusion
 
-This case study reflect realistic questions we usually focus on for all product related analytics requests in a wide variety of industries, especially in the digital space!
-
-
+This project demonstrated the power of data-driven decision-making in a subscription-based business. My contribution involved performing detailed SQL analyses, deriving actionable insights, and providing strategic recommendations to drive business growth and improve customer retention at Foodie-Fi.
 
 
 
