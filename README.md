@@ -1,4 +1,4 @@
-# Overview
+# Project Overview
 Danny saw a market gap and launched Foodie-Fi , a streaming service exclusively for food-related content, similar to Netflix but focused on cooking shows. 
 
 With the help of a few smart friends, he offered monthly and annual subscriptions, providing unlimited access to exclusive global food videos.
